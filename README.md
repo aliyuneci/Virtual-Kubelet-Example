@@ -12,7 +12,7 @@ Please note this software is experimental and should not be used for anything re
 The best description is "Kubernetes API on top, programmable back."
 
 ### Alibaba Cloud ECI Provider
-You can find more details in the Alibaba Cloud ECI provider documentation.
+You can find more details in the [Alibaba Cloud ECI provider documentation](https://github.com/virtual-kubelet/alibabacloud-eci/blob/master/README.md).
 
 #### Configuration File
 The alibaba ECI provider will read configuration file specified by the --provider-config flag.
