@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    k8s.aliyun.com/eci-image-cache: "true" #ECI will find mostly-matched imc, however, imc should be prepared
+  name: nginx-auto-match
+spec:
+  containers:
+  - image: nginx:1.7.9
+    imagePullPolicy: IfNotPresent
+    name: nginx
+    resources:
+      limits:
+        cpu: 300m
+        memory: 200Mi
+      requests:
+        cpu: 200m
+        memory: 100Mi
+  nodeName: virtual-kubelet
