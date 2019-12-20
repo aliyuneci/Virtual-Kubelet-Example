@@ -18,3 +18,11 @@ You can find more details in the [Alibaba Cloud ECI provider documentation](http
 The alibaba ECI provider will read configuration file specified by the --provider-config flag.
 
 The example configure file is providers/alibabacloud/eci.toml.
+
+#### Traditional Kubernetes
+
+
+#### Serverless Kubernetes(provided by ECI)
+
+
+#### Kubernetes + ECI
