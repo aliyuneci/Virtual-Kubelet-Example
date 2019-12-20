@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+  annotations:
+    "k8s.aliyun.com/eci-use-specs": "64-256Gi,32-64Gi,ecs.c6.xlarge"
+spec:
+  nodeName: virtual-kubelet
+  containers:
+  - image: nginx
+    name: nginx
+
+---
+### gpu
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+  annotations:
+    "k8s.aliyun.com/eci-use-specs": "ecigpu-P100-4"
+spec:
+  nodeName: virtual-kubelet
+  containers:
+  - image: nginx
+    name: nginx

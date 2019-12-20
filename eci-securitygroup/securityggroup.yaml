@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    "k8s.aliyun.com/eci-security-group" : "${your_security_group_id}"
+    ##by default, env $ECI_SECURITY_GROUP is used
+  name: set-security-group
+spec:
+  nodeName: virtual-kubelet
+  containers:
+  - image: nginx:latest
+    name: nginx

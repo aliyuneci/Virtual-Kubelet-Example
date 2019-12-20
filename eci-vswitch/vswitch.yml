@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    "k8s.aliyun.com/eci-vswitch" : "${your_vsw_id}"
+    ##by default, env $ECI_VSWITCH is used
+  name: set-vswitch
+spec:
+  nodeName: virtual-kubelet
+  containers:
+  - image: nginx:latest
+    name: nginx

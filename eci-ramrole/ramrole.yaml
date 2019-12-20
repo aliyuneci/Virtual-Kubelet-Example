@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    "k8s.aliyun.com/eci-ram-role-name" : "${your_ram_role_name}"
+  name: set-ram-role
+spec:
+  nodeName: virtual-kubelet
+  containers:
+  - image: nginx
+    name: nginx

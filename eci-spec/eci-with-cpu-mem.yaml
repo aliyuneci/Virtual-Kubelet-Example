@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+  annotations:
+    "k8s.aliyun.com/eci-use-specs": "2-4Gi" ###2C4Gi
+spec:
+  nodeName: virtual-kubelet
+  containers:
+  - image: nginx
+    name: nginx

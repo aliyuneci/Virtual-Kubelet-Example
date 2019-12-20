@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    "k8s.aliyun.com/eci-resource-group-id" : "${your_resource_group_id}"
+  name: nginx
+spec:
+  nodeName: virtual-kubelet
+  containers:
+  - image: nginx
+    name: nginx

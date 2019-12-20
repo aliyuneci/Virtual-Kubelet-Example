@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    "k8s.aliyun.com/eci-with-eip": "true" # 创建Pod时，同时创建弹性公网IP
+    "k8s.aliyun.com/eip-bandwidth": 10  # 设置弹性公网IP带宽，如果不指定默认为5M
+  name: nginx
+spec:
+  nodeName: virtual-kubelet
+  containers:
+  - image: nginx
+    name: nginx

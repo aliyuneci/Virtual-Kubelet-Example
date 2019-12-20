@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+     "k8s.aliyun.com/eci-eip-instanceid": "${your_eip_Instance_Id}"
+  name: nginx
+spec:
+  nodeName: virtual-kubelet
+  containers:
+  - image: nginx
+    name: nginx
