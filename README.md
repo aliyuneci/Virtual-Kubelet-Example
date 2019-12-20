@@ -20,9 +20,11 @@ The alibaba ECI provider will read configuration file specified by the --provide
 The example configure file is providers/alibabacloud/eci.toml.
 
 #### Traditional Kubernetes
+![eci-1](https://github.com/aliyuneci/Virtual-Kubelet-Example/blob/master/pics/ACK.png)
 
 
 #### Serverless Kubernetes(provided by ECI)
-
+![eci-2](https://github.com/aliyuneci/Virtual-Kubelet-Example/blob/master/pics/ASK.png)
 
 #### Kubernetes + ECI
+![eci-3](https://github.com/aliyuneci/Virtual-Kubelet-Example/blob/master/pics/ack-eci.png)
