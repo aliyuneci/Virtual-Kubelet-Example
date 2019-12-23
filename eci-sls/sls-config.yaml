@@ -23,10 +23,10 @@ spec:
         name: alpine
         env:
         ######### 配置 环境变量 ###########
-        ######### 配置 project，如果使用k8s集群默认的project可以不填###########
+        ######### 配置 project，如果使用k8s集群默认的project可以不填 ###########
         - name: aliyun_logs_project
           value: k8s-xxx
-        ######### 配置 机器组，如果使用k8s集群默认的project下的默认机器组可以不填###########
+        ######### 配置 机器组，如果使用k8s集群默认的project下的默认机器组可以不填 ###########
         ######### 建议不要使用默认的机器组，使用自定义（只用通过环境变量设置名字即可，ECI会帮创建和配置）###########
         - name: aliyun_logs_machinegroup
           value: k8s-group-app-alpine
@@ -34,10 +34,10 @@ spec:
           value: stdout
         - name: aliyun_logs_test-file
           value: /log/*.log
-        ######### 日志保留时间，只对单个logstore生效###########
+        ######### 日志保留时间，只对单个logstore生效 ###########
         - name: aliyun_logs_test-stdout_ttl
           value: 7
-        ######### 日志分区数，只对单个logstore生效###########
+        ######### 日志分区数，只对单个logstore生效 ###########
         - name: aliyun_logs_test-stdout_shard
           value: 2
         #################################
