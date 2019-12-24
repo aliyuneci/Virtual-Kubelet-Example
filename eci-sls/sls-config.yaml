@@ -36,10 +36,10 @@ spec:
           value: /log/*.log
         ######### 日志保留时间，只对单个logstore生效 ###########
         - name: aliyun_logs_test-stdout_ttl
-          value: 7
+          value: "7"
         ######### 日志分区数，只对单个logstore生效 ###########
         - name: aliyun_logs_test-stdout_shard
-          value: 2
+          value: "2"
         #################################
         ######### 配置vulume mount #######
         volumeMounts:
