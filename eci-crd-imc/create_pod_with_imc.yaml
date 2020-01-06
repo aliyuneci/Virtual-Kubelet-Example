@@ -1,3 +1,4 @@
+### pod to use imc
 apiVersion: v1
 kind: Pod
 metadata:
@@ -17,3 +18,30 @@ spec:
         cpu: 200m
         memory: 100Mi
   nodeName: virtual-kubelet
+
+---
+### deployment to use imc
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+      annotations:
+        # k8s.aliyun.com/eci-image-snapshot-id: imc-2zectsl90ppr4tupt023
+        k8s.aliyun.com/eci-image-cache: "true"
+    spec:
+      nodeName: virtual-kubelet
+      containers:
+      - name: nginx
+        imagePullPolicy: IfNotPresent
+        image: nginx:1.7.9
