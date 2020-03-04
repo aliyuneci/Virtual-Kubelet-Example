@@ -30,8 +30,12 @@ spec:
         ######### 建议不要使用默认的机器组，使用自定义（只用通过环境变量设置名字即可，ECI会帮创建和配置）###########
         - name: aliyun_logs_machinegroup
           value: k8s-group-app-alpine
+        ######### 设置标准输出和错误输出的logstore test-stdout###########
         - name: aliyun_logs_test-stdout
           value: stdout
+        ######### 将/log/*.log目录下的日志收集到logstore test-file###########
+        ######### 注：除了标准输出和错误输出，其他的自定义收集目录必须挂载emptyDirVolume，否者无法收集###########
+        ######### 注：比如/log/目录就需要挂载emptyDirVolume，如下###########
         - name: aliyun_logs_test-file
           value: /log/*.log
         ######### 日志保留时间，只对单个logstore生效 ###########
@@ -41,7 +45,7 @@ spec:
         - name: aliyun_logs_test-stdout_shard
           value: "2"
         #################################
-        ######### 配置vulume mount #######
+        ######### 配置vulume mount，该volume就是为了上面的自定义的日志收集目录#######
         volumeMounts:
         - name: volume-sls
           mountPath: /log
