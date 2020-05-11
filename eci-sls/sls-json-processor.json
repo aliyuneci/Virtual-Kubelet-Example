@@ -1,0 +1,27 @@
+{
+  "processors": [
+    {
+      "type": "processor_anchor",
+      "detail": {
+        "SourceKey": "content",
+        "Anchors": [
+          {
+            "Start": "stdout F ",
+            "Stop": "",
+            "FieldName": "json_content",
+            "FieldType": "string",
+            "ExpondJson": false
+          }
+        ]
+      }
+    },
+    {
+      "type": "processor_json",
+      "detail": {
+        "SourceKey": "json_content",
+        "KeepSource": false,
+        "ExpandConnector": ""
+      }
+    }
+  ]
+}
