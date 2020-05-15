@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   annotations:
     k8s.aliyun.com/eci-ntp-server: 100.100.5.1,100.100.5.2  # 设置您的NTP服务器地址
-  name: set-ngnix-ntp
+  name: set-nginx-ntp
 spec:
   nodeName: virtual-kubelet
   containers:
