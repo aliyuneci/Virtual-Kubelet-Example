@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: coredump-to-nfs-test
+  annotations:
+      k8s.aliyun.com/eci-core-pattern: "/pod/data/dump/core-eci"
+spec:
+  nodeName: virtual-kubelet
+  containers:
+  - image: nginx:latest
+    name: nginx
+    volumeMounts:
+    - mountPath: /pod/data/dump/
+      name: coredump-volume
+  volumes:
+  - name: coredump-volume
+    nfs:
+      server: xxx.cn-beijing.nas.aliyuncs.com
+      path: /
+      readOnly: false
