@@ -24,11 +24,14 @@ spec:
         env:
         ######### 配置 环境变量 ###########
         ######### 配置 project，如果使用k8s集群默认的project可以不填 ###########
-        - name: aliyun_logs_project
-          value: k8s-xxx
+        - name: aliyun_logs_test-stdout_project
+          value: k8s-log-xxx
+        - name: aliyun_logs_test-file_project
+          value: k8s-log-xxx
         ######### 配置 机器组，如果使用k8s集群默认的project下的默认机器组可以不填 ###########
-        ######### 建议不要使用默认的机器组，使用自定义（只用通过环境变量设置名字即可，ECI会帮创建和配置）###########
-        - name: aliyun_logs_machinegroup
+        - name: aliyun_logs_test-stdout_machinegroup
+          value: k8s-group-app-alpine
+        - name: aliyun_logs_test-file_machinegroup
           value: k8s-group-app-alpine
         ######### 设置标准输出和错误输出的logstore test-stdout###########
         - name: aliyun_logs_test-stdout
