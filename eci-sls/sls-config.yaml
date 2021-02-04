@@ -47,10 +47,3 @@ spec:
         ######### 日志分区数，只对单个logstore生效 ###########
         - name: aliyun_logs_test-stdout_shard
           value: "2"
-        #################################
-        ######### 配置vulume mount，该volume就是为了上面的自定义的日志收集目录#######
-        volumeMounts:
-        - name: volume-sls
-          mountPath: /log
-      volumes:
-      - name: volume-sls
